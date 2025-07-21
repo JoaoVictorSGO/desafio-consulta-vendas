@@ -2,44 +2,41 @@ package com.devsuperior.dsmeta.dto;
 
 import java.time.LocalDate;
 
-import com.devsuperior.dsmeta.projections.SaleProjection;
-
 public class SaleReportDTO {
 	private Long id;
 	private LocalDate date;
 	private Double amount;
-	private String name;
+	private String sellerName;
 	
 	public SaleReportDTO() {
 	}
 	
-	public SaleReportDTO(Long id, LocalDate date, Double amount, String name) {
+	
+	public SaleReportDTO(Long id, LocalDate date, Double amount, String sellerName) {
+		super();
 		this.id = id;
 		this.date = date;
 		this.amount = amount;
-		this.name = name;
+		this.sellerName = sellerName;
 	}
-	
-	public SaleReportDTO(SaleProjection report) {
-		id = report.getId();
-		date = report.getDate();
-		amount = report.getAmount();
-		name = report.getName();
-		
-	}
+
 
 	public Long getId() {
 		return id;
 	}
+
 	public LocalDate getDate() {
 		return date;
 	}
+
 	public Double getAmount() {
 		return amount;
 	}
-	public String getName() {
-		return name;
+
+	public String getSellerName() {
+		return sellerName;
 	}
+	
 	
 	
 }
