@@ -33,10 +33,9 @@ public class SaleService {
 			String name,
 			Pageable pageable){
 		
-		LocalDate startDate = minDate.equals(minDate) ? LocalDate.ofInstant(Instant.now(), ZoneId.systemDefault()).minusYears(1L) : LocalDate.parse(minDate);
-		LocalDate endDate = minDate.equals(maxDate)? LocalDate.ofInstant(Instant.now(), ZoneId.systemDefault()) :LocalDate.parse(maxDate);
-		System.out.println(startDate);
-		System.out.println(endDate);
+		
+		LocalDate startDate = minDate.equals("") ? LocalDate.ofInstant(Instant.now(), ZoneId.systemDefault()).minusYears(1L) : LocalDate.parse(minDate);
+		LocalDate endDate = minDate.equals("")? LocalDate.ofInstant(Instant.now(), ZoneId.systemDefault()) :LocalDate.parse(maxDate);
 		return repository.searchByDate(startDate, endDate, name, pageable);
 	
 		
